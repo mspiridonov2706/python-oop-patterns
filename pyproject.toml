@@ -1,0 +1,31 @@
+[project]
+name = "python-oop-patterns"
+version = "2024.03.24"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff==0.3.4", "mypy==1.9.0", "pre-commit==3.7.0"]
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+preview = true
+select = [
+    "E", # pycodestyle error
+    "W", # pycodestyle warning
+    "F", # pyflakes
+    "I", # isort
+    "N", # pep8-naming
+] # all rules here https://docs.astral.sh/ruff/rules/#pep8-naming-n
+fixable = ["F401", "E501"]
+ignore = ["E203"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = -1
+
+[tool.mypy]
+explicit_package_bases = true
+disable_error_code = ["valid-type"]
